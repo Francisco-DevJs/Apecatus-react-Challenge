@@ -1,0 +1,74 @@
+.cardFlex{
+    box-sizing: content-box;
+    position: relative;
+    margin: 3rem auto;
+    border: 1px solid rgb(138, 138, 247);
+    border-radius: 3px;
+    color: black;
+    font-weight: bolder;
+    padding:1rem;
+    min-height: 40%;
+    max-width: 40%;
+    
+}
+.cardItem{
+    
+}
+/* p{text-align: center; font-size: 1.2rem; margin: 2rem;} */
+.cardFlex img{
+    float: right;
+    width: 8rem;
+    border-radius: 50%;
+    position:relative;
+    text-align: center;
+
+
+}
+
+.cardFlex p{
+    /* faz o texto não passar pela margem do card */
+    text-overflow:ellipsis;
+    white-space: pre-wrap;
+    /* margin-bottom: 0.5rem; */
+    color: rgb(133, 133, 235);
+}
+
+.btn{
+    margin-bottom: 1rem;
+    
+}
+.btn button{
+    margin: 1rem 1.5rem 0 0;
+    font-size: 1rem;
+    padding: 5px;
+}
+.btn button:hover{
+    cursor: pointer;
+
+}
+.navLink{
+    text-align: center;
+    margin-left: 2rem;
+    position:relative;
+    left: 3rem;
+    text-decoration: none;
+    background-color:rgb(78, 35, 119);
+    width: 1rem;
+    border-radius: 2px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+   
+   
+}
+.navBar{
+    text-align: center;
+    position:relative;
+    margin-left:2rem;
+}
+
+.result{
+text-align: center;
+margin-top: 2rem;
+color: black;
+font-weight: bolder;
+}

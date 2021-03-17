@@ -1,0 +1,30 @@
+.search{
+    text-align: center;
+    margin-top: 3rem;
+    box-sizing: content-box;
+  
+}
+
+.search button, input{
+    padding: 5px;
+    font-size: 1rem;
+    outline-style: none;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    padding: 10px;
+    font-weight: bolder;
+
+}
+
+.search button:hover{
+    cursor: pointer;
+    color: rgb(5, 85, 85);
+    background-color: rgb(217, 216, 221);
+}
+input{
+    border: 1px solid silver;
+    width: 12rem;
+    font-weight: normal;
+  
+}

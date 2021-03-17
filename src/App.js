@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import {useEffect, useState} from 'react'
+import axios from 'axios';
+
+// ------------components----------
+import Header from './components/header/header';
+import SearchField from './components/searchField/searchButton';
+import UserCard from './components/userCard/userCard';
 
 function App() {
+  const [url, setUrl] = useState('') //resposta do componente SearchField
+  const [ storedUser, setStoredUser] = useState(); //data recebido do sessionStorage
+
+  useEffect(() => {
+    const items = JSON.parse(sessionStorage.getItem('user'));
+    if (items) {
+      setStoredUser(items);
+    }
+  }, []);
+
+  useEffect(() => {  
+    // sessionStorage.clear();
+    if(url !== ''){
+
+      async function fetchUser() {
+        await axios.get(url)
+        .then(res => { sessionStorage.setItem('user', JSON.stringify( [res.data] )) } )
+        .then(() => {setStoredUser(JSON.parse(sessionStorage.getItem('user')))})
+        .catch(err => {setStoredUser('')})
+      }
+      fetchUser();
+    }
+    
+  },[url])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Header />
+      <SearchField setUrl={setUrl}/>
+      <UserCard user={storedUser}></UserCard>
     </div>
   );
 }
+
 
 export default App;
