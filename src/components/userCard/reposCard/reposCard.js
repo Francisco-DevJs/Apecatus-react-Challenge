@@ -34,7 +34,7 @@ function ReposCard(props) {
     <div className='cardFlexRepos'>
       
       <div className='cardItem'>
-        {console.log(storedRepos)}
+        {console.log(storedRepos, 'repositorios')}
         <h3>Todos os Repositórios</h3>
         {storedRepos.map((item, id) => 
         
