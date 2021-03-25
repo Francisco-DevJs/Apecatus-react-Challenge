@@ -17,7 +17,7 @@ function StarredCard(props) {
      function fetchRepos() {
        axios.get(reposUrl.concat('/starred'))
       .then(res => { sessionStorage.setItem('starred', JSON.stringify( res.data)) } )
-      .then(() => {setStoredRepos(JSON.parse(sessionStorage.getItem('starred')))})
+      .then(() => {setStoredRepos(JSON.parse(sessionStorage.getItem('starred')) || [])})
     }
     fetchRepos();
 

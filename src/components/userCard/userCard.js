@@ -7,10 +7,6 @@ import { useEffect, useState } from 'react';
 
 function UserCard(props) { 
   const { user } = props;
-  const [newUser, setNewUser] = useState(user)
-  useEffect(() => {
-    setNewUser(user)
-  }, [newUser])
   if(user === 0 || !user || null || '' || undefined){
     return <p className='result'>  Nenhum resultado encontrado...</p>
   }
@@ -18,7 +14,7 @@ function UserCard(props) {
   return(
     <div>
           <div className='cardFlex'>
-          {newUser.map((item, id) => (
+          {user.map((item, id) => (
               <div className='cardItem' key={id}> 
 
                 <img src={item.avatar_url} alt='perfil'></img>
