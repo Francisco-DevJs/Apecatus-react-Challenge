@@ -17,7 +17,7 @@ function ReposCard(props) {
     
      function fetchRepos() {
        axios.get(reposUrl)
-      .then(res => { localStorage.setItem('repos', JSON.stringify( res.data)) } )
+      .then(res => { localStorage.setItem('repos', JSON.stringify( [res.data])) } )
       .then(() => {setStoredRepos(JSON.parse(localStorage.getItem('repos'))) || []})
       // .catch(err => {setStoredRepos('')})
   
